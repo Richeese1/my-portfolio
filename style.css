@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #062315;
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background-color: #072e1b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #f1dddf;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+span {
+    color: #00abf0;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #f1dddf;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 10%;
+}
+
+.home-content {
+    background: transparent;
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content h4 {
+    font-size: 25px;
+    margin: 20px 0 40px;
+
+}
+
+.home-content .button-box {
+    display: flex;
+    justify-content:  space-between;
+    width: 345px;
+    height: 50px;
+
+}
+
+.button-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    transition: .25s;
+}
+
+.button-box a:hover {
+    color: #00abf0;
+}
+
+.button-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.button-box a:nth-child(2):hover {
+    color: #062315;
+}
+
+.button-box a:nth-child(2)::before {
+    background: #00abf0;
+}
+
+.button-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #062315;
+    z-index: -1;
+    transition: 0.25s;
+}
+
+.button-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.home-sci a:hover {
+    color: #062315;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: 0.25s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.about {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #062315
+}
+
+.about-content{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-photo{
+    width: 50%;
+    height: 600px;
+    background: url('https://papers.co/wallpaper/papers.co-na19-sky-dark-bw-black-eiffel-tower-nature-paris-city-41-iphone-wallpaper.jpg') no-repeat center / cover;
+    border-radius: 8px;
+}
+
+.about-text {
+    width: 50%;
+    min-height: 400px;
+    background-color: #2f3d3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 8px;
+    color: #ffffff;
+    margin-left: -150px;
+}
+
+.about-content h1 {
+    font-size: 40px;
+    color: #00abf0;
+}
+
+.about-content p {
+    font-size: 18px;
+    margin: 20px 0 40px;
+    letter-spacing: 1px;
+    line-height: 17px;
+}
+
+@media only screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-photo {
+        width: 100%;
+    }
+    .about-text {
+        width: 80%;
+        margin: 0;
+        margin-top: -40%;
+    }
+
+}
+.about-text
+
+.service {
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.service-title h2 {
+    color: #ffffff;
+    font-size: 75px;
+    width: 1130px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.card {
+    height: 365px;
+    width: 335px;
+    padding: 20px 35px;
+    background: #0f492d;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card i {
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    margin: 25px 0px;
+    color: #00abf0;
+}
+
+h5 {
+    color: #ffffff;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.pra p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 25px;
+}
+
+.card .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    transition: .25s;
+}
+
+.card .btn:hover {
+    color: #0f492d;
+}
+
+.card .btn a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #0f492d;
+    z-index: -1;
+    transition: 0.25s;
+}
+
+.card .btn a:hover::before {
+    width: 100%;
+}
+
+.contact-me {
+    width: 100%;
+    height: 290px;
+    background: #0f492d ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-me p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.contact-me .contact-btn {
+    background-color: #00abf0;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .25s;
+}
+
+.contact-me .contact-btn:hover {
+    background-color: transparent;
+    border: 2px solid #0f492d;
+    cursor: pointer;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #062315;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.25s;
+    margin: 25px 20px;
+
+}
+
+footer p {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
