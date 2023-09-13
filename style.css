@@ -24,6 +24,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    backdrop-filter: blur(50px);
 }
 
 .logo {
@@ -50,6 +51,64 @@ span {
 .navbar a:hover,
 .navbar a.active {
     color: #00abf0
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #00abf0;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+    #check:checked~.icons #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #0f492d;
+        backdrop-filter: blur(50px);
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
 }
 
 .home {
@@ -204,6 +263,9 @@ span {
 }
 
 .about-photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
     height: 600px;
     background: url('https://papers.co/wallpaper/papers.co-na19-sky-dark-bw-black-eiffel-tower-nature-paris-city-41-iphone-wallpaper.jpg') no-repeat center / cover;
@@ -251,96 +313,105 @@ span {
 }
 .about-text
 
-.service {
-    width: 100%;
-    padding: 100px 0px;
-}
-
-.service-title h2 {
-    color: #ffffff;
-    font-size: 75px;
-    width: 1130px;
-    margin: 30px auto;
+.heading {
+    font-size: 15rem;
+    margin: 3rem;
     text-align: center;
 }
 
-.box {
+.education {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: auto;
+    padding-bottom: 5rem;
 }
 
-.card {
-    height: 365px;
-    width: 335px;
-    padding: 20px 35px;
-    background: #0f492d;
-    border-radius: 20px;
-    margin: 15px;
-    position: relative;
-    overflow: hidden;
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
     text-align: center;
 }
 
-.card i {
-    font-size: 50px;
-    display: block;
-    text-align: center;
-    margin: 25px 0px;
-    color: #00abf0;
+.education .education-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
 }
 
-h5 {
-    color: #ffffff;
-    font-size: 23px;
-    margin-bottom: 15px;
+.education-row .education-column {
+    flex: 1 1 40rem;
 }
 
-.pra p {
-    color: #fff;
-    font-size: 16px;
-    line-height: 27px;
-    margin-bottom: 25px;
+.education-column .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
 }
 
-.card .btn {
+.education-column .education-box {
+    border-left: .2rem solid #00abf0;
+}
+
+.education-box .education-content {
     position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 100%;
+    padding-left: 2rem;
+
+}
+
+.education-box .education-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
     background: #00abf0;
-    border: 2px solid #00abf0;
-    border-radius: 8px;
-    font-size: 19px;
-    color: #081b29;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    z-index: 1;
-    transition: .25s;
+    border-radius: 50%;
 }
 
-.card .btn:hover {
-    color: #0f492d;
+.education-content .content {
+    position: relative;
+    border: .2rem solid #00abf0;
+    padding: 1.5rem;
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
 }
 
-.card .btn a::before {
+.education-content .content::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 0%;
+    width: 0;
     height: 100%;
     background: #0f492d;
-    z-index: -1;
-    transition: 0.25s;
+    z-index: -2;
+    transition: .5s;
 }
 
-.card .btn a:hover::before {
+.education-content .content:hover::before {
     width: 100%;
+}
+
+.education-content .content .year {
+    font-size: 1.5rem;
+    color: #00abf0;
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i {
+    padding-right: .5rem;
+}
+
+.education-content .content h3{
+    font-size: 1.5rem;
+}
+
+.education-content .content p{
+    font-size: 1.2rem;
 }
 
 .contact-me {
